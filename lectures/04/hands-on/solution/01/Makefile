@@ -3,7 +3,7 @@
 .PHONY: clean
 
 dfdx: dfdx.cpp
-	g++ -o $@ $<
+	g++ -Wall -std=c++14 -o $@ $<
 
 clean:
 	rm -f dfdx *.o *~

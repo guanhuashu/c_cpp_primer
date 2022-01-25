@@ -24,7 +24,7 @@ int main(void)
     int *p1 = &a[99];
 
     // TODO: print the difference between the address the pointer you just
-    // created points to and the address the first pointer points to.  What do
+    // created points to and gitthe address the first pointer points to.  What do
     // you observe?
     cout << "Difference p1 - p0: " << p1 - p0 << endl;
 

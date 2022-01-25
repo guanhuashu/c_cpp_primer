@@ -3,6 +3,8 @@
 #include <cassert>
 #include <cstdlib>
 // TODO: include more headers here if you need them
+#include <cmath>
+#include <fstream>
 
 int main(int argc, char *argv[])
 {
@@ -16,6 +18,10 @@ int main(int argc, char *argv[])
     // TODO:
     // define the function f.  You may use a C++ lambda or a regular C/C++
     // function.  The signature should look like this: double f(double x);
+    auto f = [](double x) {
+        const double c = std::cos(x);
+        return std::exp(-0.5 * x) * std::sin(x) * c * c;
+    };
 
     // TODO:
     // allocate two arrays on the heap for the values x_i and f(x_i).
@@ -24,6 +30,8 @@ int main(int argc, char *argv[])
     // Note: we could also solve this task without allocating memory.  For the
     // sake of this exercise, we chose to allocate arrays and pre-compute the
     // values.
+    double *xi = new double[n + 1];
+    double *
 
     // TODO:
     // compute the derivative and write the result into a file with the required
