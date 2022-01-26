@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     // interval boundaries
     const double a = -10.0;
     const double b = 0.0;
-
+    // test to see if using two githubs work
     // TODO:
     // define the function f.  You may use a C++ lambda or a regular C/C++
     // function.  The signature should look like this: double f(double x);
