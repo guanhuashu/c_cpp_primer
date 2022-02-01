@@ -31,14 +31,28 @@ int main(int argc, char *argv[])
     // sake of this exercise, we chose to allocate arrays and pre-compute the
     // values.
     double *xi = new double[n + 1];
-    double *
+    double *fi = new double[n + 1];
+    const double dx = (b - a) / n;
+    for (int i = 0; i < n + 1; ++i) {
+        xi[i] = a + i * dx;
+        fi[i] = f(xi[i]);
+    }
 
     // TODO:
     // compute the derivative and write the result into a file with the required
     // format
+    std::ofstream out("dfdx.dat");
+    out << std::scientific;
+    const double fac = 1.0 / (2.0 * dx);
 
+    for (int i = 1; i < n; ++i) {
+        const double dfdx = fac * (fi[i+1] - fi[i-1]);
+        out << xi[i] << '\t' << '\t' << dfdx << '\n';
+    }
     // TODO:
     // free the allocated memory
+    delete [] xi;
+    delete [] fi;
 
     return 0;
 }
